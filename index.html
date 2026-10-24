@@ -2,318 +2,127 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-
-<!-- ===== GOOGLE SEO - GREEN STORE AFRICA - WILL RANK ===== -->
-<title>GREEN STORE AFRICA - #1 Online Shopping Nigeria, Ghana, Kenya, South Africa | Buy Tablets, Phones, Fashion</title>
-<meta name="description" content="GREEN STORE AFRICA - Africa's #1 online shopping mall. Buy tablets, iPad, phone screens, home appliances, electronics, fashion men/women/kids, medical equipment, cars, kitchen, food. Wallet payment only, PalmPay 9122857147, waybill tracking, delivery to Nigeria, Ghana, Kenya, South Africa, all Africa. Port Harcourt, Rivers State.">
-<meta name="keywords" content="GREEN STORE AFRICA, green store africa, green store Nigeria, green store Port Harcourt, online shopping Africa, buy online Nigeria, tablets Nigeria, fashion Africa, electronics Africa, GS Africa, green store shopping mall">
-<meta name="author" content="GREEN STORE AFRICA - Barnabas Paul">
-<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>GREEN STORE AFRICA 🌍 </title>
+<meta name="description" content="GREEN STORE AFRICA - All Africa mall. Tablets, Phones, Fashion, Electronics, Food, Medical. Wallet pay PalmPay 9122857147. Waybill GS-AFRICA tracking.">
+<meta name="keywords" content="GREEN STORE AFRICA, Online shopping">
 <link rel="canonical" href="https://green-store-lyart.vercel.app/">
-
-<!-- Open Graph - Facebook, WhatsApp preview -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="GREEN STORE AFRICA - Africa's Online Shopping Mall">
-<meta property="og:description" content="Buy everything in GREEN STORE AFRICA. Tablets, phones, fashion, electronics, food. Wallet pay, PalmPay 9122857147, GS-AFRICA waybill tracking, all Africa delivery from Port Harcourt.">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#FF6A00">
+<meta property="og:title" content="GREEN STORE AFRICA 🌍">
+<meta property="og:description" content="Shopping for Africa - All categories">
 <meta property="og:url" content="https://green-store-lyart.vercel.app/">
-<meta property="og:site_name" content="GREEN STORE AFRICA">
-<meta property="og:image" content="https://via.placeholder.com/1200x630/0c1f0f/C6A86F?text=GREEN+STORE+AFRICA">
+<meta property="og:image" content="https://green-store-lyart.vercel.app/og-image.png">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GREEN STORE AFRICA - Online Shopping Africa">
-<meta name="twitter:description" content="Africa's shopping mall - Wallet only, all Africa delivery.">
-
-<!-- Geo - Tells Google you are in Africa/Nigeria -->
-<meta name="geo.region" content="NG-RI">
-<meta name="geo.placename" content="Port Harcourt, Rivers State, Nigeria">
-<meta name="geo.position" content="4.8156;7.0498">
-<meta name="ICBM" content="4.8156, 7.0498">
-
-<!-- Structured Data - Helps Google show your store -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Store",
-  "name": "GREEN STORE AFRICA",
-  "description": "Africa's #1 online shopping mall - tablets, phones, fashion, electronics, food delivery, all Africa waybill tracking",
-  "url": "https://green-store-lyart.vercel.app/",
-  "logo": "https://via.placeholder.com/200x200/0c1f0f/C6A86F?text=GS+AFRICA",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Port Harcourt",
-    "addressRegion": "Rivers State",
-    "addressCountry": "Nigeria"
-  },
-  "paymentAccepted": "Wallet, PalmPay",
-  "currenciesAccepted": "NGN",
-  "areaServed": ["Nigeria","Ghana","Kenya","South Africa","Africa"]
-}
-</script>
-
-<!-- Vercel + Supabase + React CDN -->
 <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@900&display=swap" rel="stylesheet">
 
 <style>
-:root{--gold:#C6A86F;--green:#22c55e;--bg:#060d07;--card:#0c1f0f;--text:#fff;--border:#1a3d1f;--input:#0a1a0c;--red:#ff4444}
-*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif}
-header{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:10px 3%;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
-.search{flex:1;min-width:100px;background:var(--input);border:1px solid var(--border);border-radius:999px;padding:10px 14px;color:var(--text);outline:none}
-.btn{border:none;border-radius:999px;padding:9px 12px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:4px;font-size:11px}.btn-gold{background:var(--gold);color:#000}.btn-dark{background:var(--card);color:var(--text);border:1px solid var(--border)}
-.products{padding:10px 3% 100px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;cursor:pointer}.card-img{height:150px;background:var(--input);display:flex;align-items:center;justify-content:center}.card-img img{width:100%;height:100%;object-fit:cover}.card-body{padding:8px}.price{color:var(--gold);font-weight:800}
-.grid-cats{padding:8px 3%;display:flex;gap:6px;overflow-x:auto}.cat{background:var(--card);border:1px solid var(--border);padding:7px 12px;border-radius:999px;font-size:10px;cursor:pointer;white-space:nowrap}.cat.active{background:var(--gold);color:#000}
-.bottom-nav{position:fixed;bottom:10px;left:50%;transform:translateX(-50%);background:var(--card);border:1px solid var(--border);border-radius:999px;display:flex;padding:4px;z-index:200}.bottom-nav button{background:transparent;color:#6a8a70;border:none;padding:7px 11px;border-radius:999px;cursor:pointer;font-size:9px;display:flex;flex-direction:column;align-items:center}.bottom-nav button.active{background:var(--gold);color:#000}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.9);display:flex;align-items:flex-start;justify-content:center;z-index:300;padding:12px;overflow-y:auto}.modal-box{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:14px;width:100%;max-width:650px;margin:20px auto}
-input,select,textarea{width:100%;padding:11px;background:var(--input);border:1px solid var(--border);border-radius:10px;color:var(--text);margin:4px 0;outline:none;font-size:13px}
-.theme-dot{width:40px;height:40px;border-radius:50%;border:3px solid var(--border);cursor:pointer;display:inline-block;margin:4px}.theme-dot.active{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold)}
-.cart-item{border:1px solid var(--border);border-radius:12px;padding:8px;margin:5px 0;background:var(--input);display:flex;gap:8px;align-items:center}
-.qty-btn{background:var(--card);border:1px solid var(--border);width:28px;height:28px;border-radius:50%;color:var(--text);cursor:pointer;font-weight:800}
-.form-section{background:var(--input);border:1px solid var(--border);border-radius:12px;padding:10px;margin:6px 0}.form-title{font-size:10px;font-weight:800;color:var(--gold)}
-.setting-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);font-size:12px}
-.chat-bubble{padding:10px 14px;border-radius:14px;margin:6px 0;font-size:12px;max-width:85%}.user-bubble{background:var(--gold);color:#000;margin-left:auto}.bot-bubble{background:var(--input);border:1px solid var(--border)}
-.detail-main{width:100%;height:260px;border-radius:14px;overflow:hidden;background:var(--input);display:flex;align-items:center;justify-content:center}.detail-main img{width:100%;height:100%;object-fit:contain}
-.detail-gallery{display:flex;gap:6px;overflow-x:auto;margin:8px 0}.detail-thumb{width:60px;height:60px;border-radius:8px;overflow:hidden;border:2px solid var(--border);cursor:pointer;flex-shrink:0}.detail-thumb.active{border-color:var(--gold)}
+*{margin:0;padding:0;box-sizing:border-box}body{background:#f2f2f2;font-family:Inter,system-ui;color:#222}
+.ali-header{position:sticky;top:0;z-index:100;background:#fff;padding:8px 3%;display:flex;align-items:center;gap:8px;border-bottom:1px solid #eee}
+.ali-logo{color:#FF6A00;font-weight:900;font-size:18px;letter-spacing:-0.5px}
+.ali-search{flex:1;background:#f2f2f2;border-radius:999px;padding:9px 12px;display:flex;align-items:center;gap:6px}
+.ali-search input{border:none;background:transparent;flex:1;outline:none;font-size:12px}
+.ali-tabs{display:flex;gap:16px;padding:10px 3%;background:#fff;font-size:13px;border-bottom:1px solid #eee;overflow-x:auto;white-space:nowrap}
+.ali-tabs b{border-bottom:2.5px solid #111;padding-bottom:6px}
+.ali-filters{display:flex;gap:7px;padding:8px 3%;overflow-x:auto;background:#fff}
+.ali-chip{border:1px solid #ddd;border-radius:999px;padding:6px 12px;font-size:11px;white-space:nowrap;background:#fff}
+.ali-chip.black{background:#111;color:#fff;border-color:#111}
+.ali-supplier{background:#fff;padding:10px 3%;display:flex;gap:8px;align-items:center;border-top:6px solid #f2f2f2}
+.ali-supplier img{width:36px;height:36px;border-radius:6px;object-fit:cover}
+.ali-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e5e5e5}
+.ali-card{background:#fff;padding:6px;cursor:pointer}
+.ali-card img{width:100%;height:108px;object-fit:cover;background:#fafafa}
+.ali-price{font-weight:800;font-size:12px;margin-top:3px}
+.ali-bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #eee;display:flex;justify-content:space-around;padding:6px 0 8px;z-index:500}
+.ali-bottom div{text-align:center;font-size:10px;color:#666;line-height:1.1}
+.ali-bottom div.active{color:#FF6A00}
+.badge{background:#FF6A00;color:#fff;border-radius:999px;padding:1px 5px;font-size:9px;position:absolute;top:-4px;right:10px}
+.cart-drawer{position:fixed;bottom:58px;left:0;right:0;background:#fff;border-radius:16px 16px 0 0;max-height:70vh;overflow:auto;z-index:600;box-shadow:0 -4px 20px rgba(0,0,0,.2);padding:12px}
 </style>
 </head>
 <body>
 <div id="root"></div>
 
 <script type="text/babel">
-const { useState, useEffect } = React;
-const supabase = window.supabase.createClient('https://lmlivfvwhjkfxiukdrlm.supabase.co','sb_publishable_8Lhp0kpFsJM6Wrq_ZxKwgQ_YDrxBUaE');
-const CATS=["tablets","iPad","phone screen","Home appliances screen","Electronic devices screen","Fashion men screen","Women fashion screen","Kids screen","Medical equipment screen","Electrical power screen","Customatic screen","Car,bike,bicycles screen","Engineering equipment screen","Kitchen screen","Food delivery screen","Food & groceries screen"];
+const {useState,useEffect}=React;
+const supabaseClient=window.supabase.createClient('https://lmlivfvwhjkfxiukdrlm.supabase.co','sb_publishable_8Lhp0kpFsJM6Wrq_ZxKwgQ_YDrxBUaE');
 
 function App(){
-  const [products,setProducts]=useState([]);
-  const [cart,setCart]=useState([]);
-  const [wallet,setWallet]=useState(500);
-  const [user,setUser]=useState(null);
-  const [modal,setModal]=useState(null);
-  const [detail,setDetail]=useState(null);
-  const [detailQty,setDetailQty]=useState(1);
-  const [detailImg,setDetailImg]=useState('');
-  const [theme,setTheme]=useState('greenBlackGold');
-  const [chat,setChat]=useState([{from:'bot',text:'👋 Welcome to GREEN STORE AFRICA! I am GS Africa Smart Robot - I know YOUR wallet, cart, products. Ask: What should I buy in Africa with my wallet?'}]);
-  const [chatInput,setChatInput]=useState('');
-  const [search,setSearch]=useState('');
-  const [auth,setAuth]=useState({email:'',password:'',msg:''});
-  const [fund,setFund]=useState({amount:'',ref:''});
-  const [orderForm,setOrderForm]=useState({fullName:'',phone:'',email:'',addr:'',city:'',state:'',country:'',zip:'',note:''});
+ const [products,setProducts]=useState([]);
+ const [search,setSearch]=useState('tablet for adults');
+ const [cart,setCart]=useState(JSON.parse(localStorage.getItem('gs-cart')||'[]'));
+ const [showCart,setShowCart]=useState(false);
+ const [wallet,setWallet]=useState(Number(localStorage.getItem('gs-wallet')||'0'));
 
-  useEffect(()=>{
-    const saved=localStorage.getItem('gs_theme')||'greenBlackGold';
-    applyTheme(saved);
-    loadProducts();
-    supabase.auth.getUser().then(({data})=>{if(data.user){setUser(data.user); supabase.from('wallets').select('balance').eq('user_id',data.user.id).single().then(({data})=>{if(data)setWallet(data.balance)})}});
-  },[]);
+ useEffect(()=>{ supabaseClient.from('products').select('*').limit(60).then(({data})=>setProducts(data||[])); },[]);
+ useEffect(()=>{ localStorage.setItem('gs-cart',JSON.stringify(cart)); },[cart]);
 
-  function applyTheme(t){
-    setTheme(t); localStorage.setItem('gs_theme',t);
-    const r=document.documentElement;
-    const themes={
-      blackGold:{bg:'#050a06',card:'#0f1a12',gold:'#C6A86F',green:'#C6A86F',text:'#fff',border:'#1e3322',input:'#09110a'},
-      greenBlackGold:{bg:'#060d07',card:'#0c1f0f',gold:'#C6A86F',green:'#22c55e',text:'#fff',border:'#1a3d1f',input:'#0a1a0c'},
-      whiteGold:{bg:'#fff',card:'#fff9ec',gold:'#C6A86F',green:'#C6A86F',text:'#111',border:'#e8d9b5',input:'#fffaf0'},
-      blackGreen:{bg:'#040a05',card:'#0a1a0f',gold:'#22c55e',green:'#22c55e',text:'#fff',border:'#143d1f',input:'#08120a'},
-      lightGreen:{bg:'#f1f8f1',card:'#fff',gold:'#22c55e',green:'#22c55e',text:'#0a1a0f',border:'#b7e4b7',input:'#e8f5e9'},
-      lightGreenGold:{bg:'#f8fdf8',card:'#fff',gold:'#C6A86F',green:'#22c55e',text:'#0a1a0f',border:'#c8e6c9',input:'#f1f8e9'}
-    };
-    const th=themes[t]; if(th) Object.entries(th).forEach(([k,v])=>r.style.setProperty(`--${k}`,v));
-  }
+ const addCart=(p)=>{ setCart(c=>{ const f=c.find(x=>x.id===p.id); if(f) return c.map(x=>x.id===p.id?{...x,qty:x.qty+1}:x); return [...c,{...p,qty:1}]; }); setShowCart(true); };
+ const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
 
-  async function loadProducts(cat=''){
-    let q=supabase.from('products').select('*').order('created_at',{ascending:false}).limit(100);
-    if(cat) q=q.ilike('category',`%${cat}%`);
-    const {data}=await q; setProducts(data||[]);
-  }
+ return (<div style={{paddingBottom:70}}>
+  <div className="ali-header">
+    <div className="ali-logo">GS AFRICA</div>
+    <div className="ali-search"><i className="ri-search-line"></i><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="What are you looking for?"/><i className="ri-camera-line" style={{fontSize:18}}></i><div style={{background:'#111',color:'#fff',borderRadius:'50%',width:26,height:26,display:'flex',alignItems:'center',justifyContent:'center'}}><i className="ri-search-line"></i></div></div>
+  </div>
 
-  function addToCart(p,qty=1){
-    setCart(prev=>{
-      const i=prev.findIndex(c=>c.name===p.name);
-      if(i>-1){const copy=[...prev]; copy[i].qty+=qty; return copy;}
-      return [...prev,{name:p.name,price:+p.price,qty,image:p.image?.split(',')[0]}];
-    });
-    setModal('cart');
-  }
+  <div className="ali-tabs"><span>AI Mode</span><b>Products</b><span>Manufacturers</span><span>Worldwide</span><span>GS Pay</span></div>
 
-  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
-  const count=cart.reduce((s,i)=>s+i.qty,0);
-  const filtered=products.filter(p=>p.name.toLowerCase().includes(search.toLowerCase()));
+  <div className="ali-filters">
+    <div className="ali-chip black">Low MOQ for customization</div>
+    <div className="ali-chip">Sample-based customization</div>
+    <div className="ali-chip">Fast customizing ⚡</div>
+    <div className="ali-chip">Top Ranking 🏆</div>
+    <div className="ali-chip">PalmPay 9122857147</div>
+  </div>
 
-  function askRobot(q){
-    if(!q) return;
-    const qLower=q.toLowerCase();
-    let ans='';
-    if(qLower.includes('what should i buy')||qLower.includes('recommend')){
-      const affordable=products.filter(p=>p.price<=wallet).slice(0,3);
-      ans=affordable.length?`🎁 GREEN STORE AFRICA recommends with #${wallet.toLocaleString()}: ${affordable.map(p=>`${p.name} #${Number(p.price).toLocaleString()}`).join(', ')} — Tap product to see Africa delivery details + more images!`:`💡 Wallet #${wallet.toLocaleString()} low. Fund PalmPay 9122857147 for Africa delivery`;
-    }else if(qLower.includes('wallet')||qLower.includes('fund')){
-      ans=`💰 GS AFRICA Wallet #${wallet.toLocaleString()} | Cart #${total.toLocaleString()} | ${total>wallet?`Need #${(total-wallet).toLocaleString()} more - Fund 9122857147 for GS-AFRICA waybill`:'✅ Ready to pay & ship all Africa!'}`;
-    }else if(qLower.includes('cart')){
-      ans=`🛒 GS AFRICA Cart ${count} items #${total.toLocaleString()} | ${cart.map(c=>c.name+' x'+c.qty).join(', ')||'Empty - Tap product for details + more images gallery'}`;
-    }else if(qLower.includes('africa')||qLower.includes('delivery')){
-      ans=`🌍 GREEN STORE AFRICA delivers to Nigeria, Ghana, Kenya, South Africa, all Africa! Wallet pay, GS-AFRICA waybill tracking, rider delivery. From Port Harcourt, Rivers State.`;
-    }else{
-      ans=`🤖 GREEN STORE AFRICA Robot: Wallet #${wallet.toLocaleString()}, Cart ${count} items, Products ${products.length}. GS delivers all Africa, wallet only, tap product for details + more images. Ask "What should I buy in Africa?"`;
-    }
-    setChat(prev=>[...prev,{from:'user',text:q},{from:'bot',text:ans}]);
-  }
+  <div className="ali-supplier">
+    <img src="https://via.placeholder.com/36/0c1f0f/C6A86F?text=GS"/>
+    <div><b style={{fontSize:12}}>GREEN STORE AFRICA Co., Ltd.</b><div style={{fontSize:10}}><span style={{color:'#1686D7',fontWeight:700}}>✔ Verified</span> 3 yrs • 30+ staff • 7,100 m² • ₦860.5M+<br/>Response ≤2h • On-time 96% • Wallet Balance: ₦{wallet.toLocaleString()} • Waybill GS-AFRICA</div></div>
+  </div>
 
-  return(
-    <div>
-      <header>
-        <div style={{display:'flex',alignItems:'center',gap:6}}><div style={{width:32,height:32,borderRadius:'50%',background:'conic-gradient(#C6A86F,#22c55e,#C6A86F)',display:'flex',alignItems:'center',justifyContent:'center',color:'#000',fontFamily:'Orbitron',fontWeight:900,fontSize:10}}>GS</div><div><b style={{fontSize:11}}>GREEN STORE AFRICA</b><div style={{fontSize:7,color:'var(--green)'}}>ALL AFRICA DELIVERY</div></div></div>
-        <input className="search" placeholder="Search Africa products..." value={search} onChange={e=>setSearch(e.target.value)} />
-        <button className="btn btn-dark" onClick={()=>setModal('wallet')}>Wallet #{wallet}</button>
-        <button className="btn btn-gold" onClick={()=>setModal('cart')}><i className="ri-shopping-cart-line"></i> {count}</button>
-        <button className="btn btn-dark" onClick={()=>setModal('auth')}>{user?user.email.slice(0,8):'Login'}</button>
-      </header>
-
-      <div style={{padding:'8px 3%',background:'var(--card)',borderBottom:'1px solid var(--border)',textAlign:'center'}}>
-        <h1 style={{fontSize:14,fontFamily:'Orbitron',color:'var(--gold)'}}>GREEN STORE AFRICA - AFRICA'S ONLINE SHOPPING MALL</h1>
-        <p style={{fontSize:9,color:'#6a8a70'}}>Port Harcourt, Nigeria | Ghana | Kenya | South Africa | All Africa Delivery | Wallet Pay | GS-AFRICA Waybill</p>
+  <div className="ali-grid">
+    {products.filter(p=> (p.name||'').toLowerCase().includes(search.toLowerCase())).map((p,i)=>
+      <div key={p.id||i} className="ali-card" onClick={()=>addCart(p)}>
+        <img src={(p.image||'').split(',')[0]||'https://via.placeholder.com/200?text=GS+AFRICA'} alt={p.name}/>
+        <div className="ali-price">₦{Number(p.price||0).toLocaleString()}</div>
+        <div style={{fontSize:9,color:'#666',height:22,overflow:'hidden'}}>{p.name}</div>
+        <div style={{fontSize:8,color:'#999'}}>Min. order: 1 piece • GS Wallet Pay</div>
       </div>
+    )}
+  </div>
 
-      <div className="grid-cats">{CATS.map(c=><div key={c} className="cat" onClick={()=>loadProducts(c)}>{c}</div>)}</div>
-      <div className="products">
-        {filtered.map((p,idx)=>(
-          <div key={p.id||idx} className="card" onClick={()=>{setDetail(p); setDetailQty(1); setDetailImg(p.image?.split(',')[0]||''); setModal('detail')}}>
-            <div className="card-img">{p.image?<img src={p.image.split(',')[0]} alt={p.name} />:<i className="ri-image-line"></i>}</div>
-            <div className="card-body"><b style={{fontSize:12}}>{p.name}</b><div style={{fontSize:9,color:'#6a8a70'}}>{p.category} - Africa</div><div className="price">#{Number(p.price).toLocaleString()}</div><button className="btn btn-gold" style={{width:'100%',marginTop:6}} onClick={e=>{e.stopPropagation(); addToCart(p)}}>Add to Cart Africa</button></div>
-          </div>
-        ))}
-      </div>
+  <div style={{background:'#fff',padding:'12px 3%',marginTop:6}}>
+    <b style={{fontSize:13}}>Discover Reputable Suppliers</b>
+    <p style={{fontSize:11,color:'#666',marginTop:4}}>GREEN STORE AFRICA - All Africa Online Mall - Port Harcourt | Ghana | Kenya | South Africa. Pay with GS Wallet (PalmPay 9122857147). Track with Waybill GS-AFRICA-xxxx. Alibaba-style shopping but for Africa.</p>
+  </div>
 
-      <footer style={{padding:'20px 3% 100px',textAlign:'center',borderTop:'1px solid var(--border)',background:'var(--card)'}}>
-        <h2 style={{fontFamily:'Orbitron',color:'var(--gold)',fontSize:16}}>GREEN STORE AFRICA</h2>
-        <p style={{fontSize:11,marginTop:8,lineHeight:1.6}}>
-          <b>Africa's #1 Online Shopping Mall</b><br/>
-          Tablets, iPad, Phone Screens, Home Appliances, Electronics, Fashion Men/Women/Kids, Medical Equipment, Electrical Power, Cars/Bikes, Engineering Equipment, Kitchen, Food Delivery<br/><br/>
-          <b>Headquarters:</b> Port Harcourt, Rivers State, Nigeria<br/>
-          <b>Delivery:</b> Nigeria, Ghana, Kenya, South Africa, All Africa<br/>
-          <b>Payment:</b> Wallet Only - PalmPay 9122857147 Barnabas Paul<br/>
-          <b>Tracking:</b> GS-AFRICA Waybill + Rider + Pickup Date<br/>
-          <b>Contact:</b> barnabaspaul43@gmail.com<br/><br/>
-          © 2026 GREEN STORE AFRICA - All Rights Reserved - GS Logo
-        </p>
-        <div style={{marginTop:12,fontSize:9,color:'#6a8a70'}}>
-          Keywords: green store africa, green store Nigeria, online shopping Africa, buy tablets Nigeria, fashion Africa, electronics Africa, GS Africa, Port Harcourt shopping, Africa delivery, wallet pay Africa
-        </div>
-      </footer>
+  {showCart && <div className="cart-drawer">
+    <div style={{display:'flex',justifyContent:'space-between'}}><b>Cart ({cart.length})</b><span onClick={()=>setShowCart(false)}>✕ Close</span></div>
+    {cart.map(c=><div key={c.id} style={{display:'flex',justifyContent:'space-between',padding:'8px 0',borderBottom:'1px solid #eee'}}><span style={{fontSize:12}}>{c.name.slice(0,30)} x{c.qty}</span><b style={{fontSize:12}}>₦{(c.price*c.qty).toLocaleString()}</b></div>)}
+    <div style={{display:'flex',justifyContent:'space-between',marginTop:10}}><b>Total: ₦{total.toLocaleString()}</b><button onClick={()=>{ if(wallet>=total){ setWallet(w=>w-total); localStorage.setItem('gs-wallet',(wallet-total).toString()); alert('Order placed! Waybill: GS-AFRICA-'+Date.now()); setCart([]); }else{ alert('Low wallet! Fund PalmPay 9122857147 then Top-up in wallet page. Total: ₦'+total.toLocaleString()); } }} style={{background:'#FF6A00',color:'#fff',border:'none',padding:'10px 18px',borderRadius:999}}>Pay with GS Wallet</button></div>
+    <div style={{fontSize:10,color:'#666',marginTop:6}}>Wallet Pay: Send to PalmPay 9122857147 - Barnabas then Top-up. Waybill tracking GS-AFRICA-xxxx</div>
+  </div>}
 
-      <div className="bottom-nav">
-        <button className="active" onClick={()=>window.scrollTo({top:0,behavior:'smooth'})}><i className="ri-home-5-fill"></i>Home</button>
-        <button onClick={()=>setModal('cats')}><i className="ri-apps-2-line"></i>Cat</button>
-        <button onClick={()=>setModal('history')}><i className="ri-file-list-3-line"></i>Orders</button>
-        <button onClick={()=>setModal('robot')}><i className="ri-robot-2-fill"></i>Robot</button>
-        <button onClick={()=>setModal('settings')}><i className="ri-settings-3-line"></i>Set</button>
-      </div>
-
-      {modal==='cart'&&(
-        <div className="modal" onClick={e=>{if(e.target===e.currentTarget)setModal(null)}}><div className="modal-box">
-          <h3>Cart - {count} items - GS AFRICA</h3>
-          <div style={{maxHeight:'40vh',overflow:'auto'}}>{cart.length?cart.map((c,i)=><div key={i} className="cart-item"><div style={{flex:1}}><b>{c.name}</b><br/><span style={{color:'var(--gold)'}}>#{c.price} x {c.qty} = #{c.price*c.qty}</span></div><div style={{display:'flex',gap:4,alignItems:'center'}}><button className="qty-btn" onClick={()=>{const copy=[...cart]; copy[i].qty=Math.max(1,copy[i].qty-1); setCart(copy)}}>-</button><b>{c.qty}</b><button className="qty-btn" onClick={()=>{const copy=[...cart]; copy[i].qty++; setCart(copy)}}>+</button><button style={{background:'#ff4444',border:'none',borderRadius:'50%',width:28,height:28,color:'#fff'}} onClick={()=>setCart(cart.filter((_,idx)=>idx!==i))}>X</button></div></div>):<p style={{textAlign:'center',padding:20,color:'#6a8a70'}}>Cart empty - Tap product for Africa details</p>}</div>
-          <div style={{border:'2px solid var(--gold)',borderRadius:12,padding:10,marginTop:10,display:'flex',justifyContent:'space-between'}}><div>TOTAL <b style={{color:'var(--gold)'}}>#{total.toLocaleString()}</b><div style={{fontSize:10}}>Wallet #{wallet} - Africa Delivery</div></div><button className="btn btn-dark" onClick={()=>setCart([])}>Clear</button></div>
-          <button className="btn btn-gold" style={{width:'100%',marginTop:10,padding:14}} onClick={()=>setModal('checkout')}>ORDER NOW - AFRICA FORM & PAY</button>
-          <button className="btn btn-dark" style={{width:'100%',marginTop:6}} onClick={()=>setModal(null)}>Continue Shopping Africa</button>
-        </div></div>
-      )}
-
-      {modal==='detail'&&detail&&(
-        <div className="modal" onClick={e=>{if(e.target===e.currentTarget)setModal(null)}}><div className="modal-box">
-          <div style={{display:'flex',justifyContent:'space-between'}}><h3>{detail.name} - GS AFRICA Details</h3><button className="btn btn-dark" onClick={()=>setModal(null)}>X</button></div>
-          <div className="detail-main"><img src={detailImg||detail.image?.split(',')[0]} alt={detail.name} /></div>
-          <div className="detail-gallery">{detail.image?.split(',').map((im,i)=><div key={i} className={`detail-thumb ${detailImg===im?'active':''}`} onClick={()=>setDetailImg(im)}><img src={im} style={{width:'100%',height:'100%',objectFit:'cover'}} alt={`view ${i+1}`} /></div>)}</div>
-          <div style={{background:'var(--input)',border:'1px solid var(--border)',borderRadius:12,padding:10,marginTop:8}}>
-            <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}><b style={{fontSize:20,color:'var(--gold)'}}>#{Number(detail.price).toLocaleString()}</b><div style={{display:'flex',gap:6,alignItems:'center'}}><button className="qty-btn" onClick={()=>setDetailQty(q=>Math.max(1,q-1))}>-</button><b>{detailQty}</b><button className="qty-btn" onClick={()=>setDetailQty(q=>q+1)}>+</button></div></div>
-            <p style={{fontSize:12,marginTop:8,lineHeight:1.5}}>{detail.description||'High quality GREEN STORE AFRICA product. Wallet only payment. GS-AFRICA waybill tracking, rider delivery, pickup date. All Africa delivery from Port Harcourt, Nigeria to Ghana, Kenya, South Africa. More images in gallery above. Tap Add to Cart Africa.'}</p>
-            <div style={{display:'flex',gap:8,marginTop:10}}><button className="btn btn-dark" style={{flex:1,padding:12}} onClick={()=>{addToCart(detail,detailQty)}}>Add to Cart Africa</button><button className="btn btn-gold" style={{flex:1,padding:12}} onClick={()=>{addToCart(detail,detailQty); setModal('checkout')}}>Buy Now Africa</button></div>
-          </div>
-          <button className="btn btn-dark" style={{width:'100%',marginTop:8}} onClick={()=>{setModal('robot'); askRobot(`Tell me about ${detail.name} Africa`)}}>Ask Africa Robot About This</button>
-        </div></div>
-      )}
-
-      {modal==='checkout'&&(
-        <div className="modal"><div className="modal-box"><h3>GREEN STORE AFRICA Order Form - #{total.toLocaleString()}</h3>
-          <input placeholder="Full Name *" value={orderForm.fullName} onChange={e=>setOrderForm({...orderForm,fullName:e.target.value})} />
-          <input placeholder="Phone *" value={orderForm.phone} onChange={e=>setOrderForm({...orderForm,phone:e.target.value})} />
-          <input placeholder="Email *" value={orderForm.email} onChange={e=>setOrderForm({...orderForm,email:e.target.value})} />
-          <input placeholder="Street *" value={orderForm.addr} onChange={e=>setOrderForm({...orderForm,addr:e.target.value})} />
-          <div style={{display:'flex',gap:6}}><input placeholder="City *" value={orderForm.city} onChange={e=>setOrderForm({...orderForm,city:e.target.value})} style={{flex:1}} /><input placeholder="State *" value={orderForm.state} onChange={e=>setOrderForm({...orderForm,state:e.target.value})} style={{flex:1}} /></div>
-          <select value={orderForm.country} onChange={e=>setOrderForm({...orderForm,country:e.target.value})}><option value="">Country * - Africa</option><option>Nigeria</option><option>Ghana</option><option>Kenya</option><option>South Africa</option><option>Other Africa</option></select>
-          <button className="btn btn-gold" style={{width:'100%',marginTop:10,padding:14}} onClick={async()=>{
-            if(!user) return alert('Login first');
-            if(!orderForm.fullName||!orderForm.phone||!orderForm.addr) return alert('Fill required *');
-            if(total>wallet) return alert('Low wallet #'+wallet);
-            const waybill='GS-AFRICA-'+Math.floor(100000+Math.random()*900000);
-            const fullAddr=`${orderForm.fullName} | ${orderForm.phone} | ${orderForm.email} | ${orderForm.addr}, ${orderForm.city}, ${orderForm.state}, ${orderForm.country}`;
-            const {error}=await supabase.from('orders').insert({user_id:user.id,products:cart,total,status:'Wallet Paid GS AFRICA',waybill_number:waybill,delivery_address:fullAddr});
-            if(error) alert(error.message); else{setWallet(w=>w-total); await supabase.from('wallets').update({balance:wallet-total}).eq('user_id',user.id); setCart([]); alert('PAID! GS AFRICA Waybill '+waybill+' - Africa Delivery!'); setModal(null)}
-          }}>CONFIRM & PAY - GS AFRICA WAYBILL</button>
-          <button className="btn btn-dark" style={{width:'100%',marginTop:6}} onClick={()=>setModal('cart')}>Back to Cart Africa</button>
-        </div></div>
-      )}
-
-      {modal==='robot'&&(
-        <div className="modal"><div className="modal-box"><h3>GS AFRICA Smart Robot - Knows Your Africa Needs 🤖🌍</h3>
-          <div style={{background:'var(--input)',border:'1px solid var(--gold)',borderRadius:10,padding:10,margin:'8px 0',fontSize:11}}>
-            {wallet<total?`⚠️ GS AFRICA: Wallet #${wallet} < Cart #${total} - Need #${total-wallet} more. Fund PalmPay 9122857147`:`✅ GS AFRICA: Wallet #${wallet} | Cart ${count} items #${total} | Products ${products.length} | All Africa Delivery`}
-          </div>
-          <div style={{background:'var(--bg)',border:'1px solid var(--border)',height:300,overflow:'auto',borderRadius:12,padding:10,display:'flex',flexDirection:'column'}}>
-            {chat.map((c,i)=><div key={i} className={`chat-bubble ${c.from==='user'?'user-bubble':'bot-bubble'}`}>{c.text}</div>)}
-          </div>
-          <div style={{display:'flex',gap:6,marginTop:8}}><input style={{flex:1}} placeholder="Ask Africa robot..." value={chatInput} onChange={e=>setChatInput(e.target.value)} onKeyDown={e=>{if(e.key==='Enter'){askRobot(chatInput); setChatInput('')}}} /><button className="btn btn-gold" onClick={()=>{askRobot(chatInput); setChatInput('')}}>Send</button></div>
-          <div style={{display:'flex',flexWrap:'wrap',gap:4,marginTop:8}}>
-            <button className="btn btn-dark" style={{fontSize:10}} onClick={()=>askRobot('What should I buy in Africa with my wallet?')}>💡 What to buy Africa?</button>
-            <button className="btn btn-dark" style={{fontSize:10}} onClick={()=>askRobot('How to fund wallet Africa?')}>💰 Fund Africa?</button>
-            <button className="btn btn-dark" style={{fontSize:10}} onClick={()=>askRobot('Africa delivery?')}>🌍 Africa Delivery?</button>
-          </div>
-          <button className="btn btn-dark" style={{width:'100%',marginTop:8}} onClick={()=>setModal(null)}>Close Africa Robot</button>
-        </div></div>
-      )}
-
-      {modal==='settings'&&(
-        <div className="modal"><div className="modal-box" style={{maxHeight:'90vh',overflow:'auto'}}><h3>Settings - GREEN STORE AFRICA ⚛️🌍</h3>
-          <div style={{background:'var(--input)',border:'1px solid var(--border)',borderRadius:12,padding:12,marginTop:10}}><div className="form-title">THEMES - 6 OPTIONS - GS AFRICA</div><div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:8,marginTop:8}}>
-            {['blackGold','greenBlackGold','whiteGold','blackGreen','lightGreen','lightGreenGold'].map(t=><div key={t} style={{textAlign:'center'}}><div className={`theme-dot ${theme===t?'active':''}`} style={{background:t==='whiteGold'?'#fff':t==='blackGold'?'#050a06':t==='lightGreen'?'#e8f5e9':'conic-gradient(#060d07,#C6A86F,#22c55e)'}} onClick={()=>applyTheme(t)}></div><div style={{fontSize:8}}>{t}</div></div>)}
-          </div></div>
-          <div style={{background:'var(--input)',border:'1px solid var(--border)',borderRadius:12,padding:12,marginTop:10}}><div className="form-title">GREEN STORE AFRICA INFO</div>
-            <div className="setting-row"><span>Name</span><span>GREEN STORE AFRICA</span></div>
-            <div className="setting-row"><span>Library</span><span>React.js 18 Single File</span></div>
-            <div className="setting-row"><span>SEO</span><span>Google Optimized ✅</span></div>
-            <div className="setting-row"><span>Wallet</span><span>#{wallet}</span></div>
-            <div className="setting-row"><span>Cart</span><span>{count} items</span></div>
-            <div className="setting-row"><span>Location</span><span>Port Harcourt, NG</span></div>
-            <div className="setting-row"><span>Delivery</span><span>All Africa 🌍</span></div>
-            <div className="setting-row"><span>Version</span><span>GS Africa React v8.1 SEO</span></div>
-          </div>
-          <button className="btn btn-dark" style={{width:'100%',marginTop:10}} onClick={()=>setModal(null)}>Close Settings</button>
-        </div></div>
-      )}
-
-      {modal==='auth'&&(
-        <div className="modal"><div className="modal-box"><h3>Login - GREEN STORE AFRICA</h3><input placeholder="Email" value={auth.email} onChange={e=>setAuth({...auth,email:e.target.value})} /><input placeholder="Password" type="password" value={auth.password} onChange={e=>setAuth({...auth,password:e.target.value})} /><button className="btn btn-gold" style={{width:'100%',marginTop:6}} onClick={async()=>{const {data,error}=await supabase.auth.signInWithPassword({email:auth.email,password:auth.password}); if(error) setAuth({...auth,msg:error.message}); else{setUser(data.user); setModal(null); const {data:w}=await supabase.from('wallets').select('balance').eq('user_id',data.user.id).single(); if(w)setWallet(w.balance)}}}>Login Africa</button><button className="btn btn-dark" style={{width:'100%',marginTop:6}} onClick={async()=>{const {data,error}=await supabase.auth.signUp({email:auth.email,password:auth.password}); if(error) setAuth({...auth,msg:error.message}); else{await supabase.from('wallets').insert({user_id:data.user.id,balance:500}); setWallet(500); setAuth({...auth,msg:'Created #500 - Welcome to GS Africa!'})}}}>Signup Africa + #500</button><div style={{fontSize:11,color:'var(--gold)'}}>{auth.msg}</div><button className="btn btn-dark" style={{width:'100%',marginTop:10}} onClick={()=>setModal(null)}>Close</button></div></div>
-      )}
-
-      {modal==='wallet'&&(
-        <div className="modal"><div className="modal-box"><h3>Wallet #{wallet} - GREEN STORE AFRICA</h3><div style={{background:'var(--input)',border:'1px dashed var(--gold)',borderRadius:12,padding:10,marginTop:8}}><h2 style={{color:'var(--gold)'}}>9122857147</h2><p>PalmPay - Barnabas Paul - GS AFRICA</p></div><input placeholder="Amount" type="number" value={fund.amount} onChange={e=>setFund({...fund,amount:e.target.value})} /><input placeholder="Ref" value={fund.ref} onChange={e=>setFund({...fund,ref:e.target.value})} /><button className="btn btn-gold" style={{width:'100%'}} onClick={async()=>{if(!user) return alert('Login Africa first'); const {error}=await supabase.from('fundings').insert({user_id:user.id,amount:+fund.amount,monnify_ref:fund.ref,status:'pending'}); if(error) alert(error.message); else{alert('Submitted to GS Africa!'); setModal(null)}}}>I HAVE PAID - GS AFRICA</button><button className="btn btn-dark" style={{width:'100%',marginTop:10}} onClick={()=>setModal(null)}>Close</button></div></div>
-      )}
-
-      {modal==='cats'&&(
-        <div className="modal"><div className="modal-box"><h3>Categories - GREEN STORE AFRICA 🌍</h3><div style={{display:'flex',flexWrap:'wrap',gap:6,marginTop:10}}>{CATS.map(c=><button key={c} className="btn btn-dark" style={{margin:4}} onClick={()=>{loadProducts(c); setModal(null)}}>{c} - Africa</button>)}</div><button className="btn btn-dark" style={{width:'100%',marginTop:10}} onClick={()=>setModal(null)}>Close</button></div></div>
-      )}
-    </div>
-  );
+  <div className="ali-bottom">
+    <div className="active"><i className="ri-home-5-fill" style={{fontSize:20}}></i><br/>Home</div>
+    <div><i className="ri-apps-2-line" style={{fontSize:20}}></i><br/>Categories</div>
+    <div><i className="ri-message-3-line" style={{fontSize:20}}></i><br/>Messenger</div>
+    <div onClick={()=>setShowCart(true)} style={{position:'relative'}}><i className="ri-shopping-cart-line" style={{fontSize:20}}></i>{cart.length>0&&<span className="badge">{cart.length}</span>}<br/>Cart</div>
+    <div><i className="ri-user-3-line" style={{fontSize:20}}></i><br/>My GS</div>
+  </div>
+ </div>);
 }
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+<script>
+// PWA Register - Makes GS AFRICA installable like Alibaba App
+if('serviceWorker' in navigator){ navigator.serviceWorker.register('/sw.js').then(()=>console.log('GS AFRICA PWA Ready')); }
 </script>
 </body>
 </html>
