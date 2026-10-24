@@ -1,0 +1,9 @@
+{
+  "name": "GREEN STORE AFRICA",
+  "short_name": "GS AFRICA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FF6A00",
+  "icons": [{"src": "https://cdn-icons-png.flaticon.com/512/3081/3081980.png","sizes": "512x512","type": "image/png"}]
+}
