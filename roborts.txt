@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# GREEN STORE AFRICA - All Africa Online Shopping
+Sitemap: https://green-store-lyart.vercel.app/sitemap.xml
+
+# Allow Google, Bing, all search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
